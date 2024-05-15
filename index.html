@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>NeuromodulaVon</title>
+      <title>Neuromodulation</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -30,7 +30,35 @@
    </head>
    <!-- body -->
    <body class="main-layout">
-      <div class="contact">
+
+            <!-- header -->
+            <header class="full_bg margin_left60">
+               <!-- header inner -->
+               <div class="header">
+                  <div class="container">
+                     <div class="row">
+                       
+                        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                           <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                              </button>
+                              <div class="collapse navbar-collapse" id="navbarsExample04">
+                                 <ul class="navbar-nav mr-auto">
+                                   
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="login.html">LogIn</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                             
+                           </nav>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </header>
+      <div class="patient_form">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
@@ -41,54 +69,64 @@
             </div>
             <div class="row">
                <div class="col-md-12">
-                  <form id="request" class="main_form">
+                  <form id="request" class="main_form" action="patientformAction.php" method="post">
                      <div class="row">
                         <div class="col-md-6 ">
-                           <input class="contactus" placeholder="First Name " type="type" name="fiirstname"> 
+                           <input class="details" placeholder="First Name " type="type" name="firstname"> 
                         </div>
                         <div class="col-md-6">
-                           <input class="contactus" placeholder="Surname" type="type" name="surname">                          
+                           <input class="details" placeholder="Surname" type="type" name="surname">                          
                         </div>
                         <div class="col-md-6">
-                           <input class="contactus" placeholder="DOB" type="date" name="DOB"> 
+                           <input class="details" id="dob" placeholder="DOB" type="date" name="DOB"> 
                         </div>
                         <div class="col-md-6">
-                           <input class="contactus" placeholder="Age" type="type" name="age"> 
+                           <input class="details" id="age" placeholder="Age" type="type" name="age" readonly> 
                         </div>
                        
                         <div class="col-md-12">
                               <div class="card-header ">Brief Pain Inventory (BPI)</div>
                         </div>
+                        
                         <div class="col-md-6  card-body">
-                           <select class="contactus" required> 
-                              <option>Select</option>
-                              <option> How much relief have pain treatments or medications FROM THIS CLINIC provided? (0-100)  </option>
-                              <option> Please rate your pain based on the number that best describes your pain at it’s WORST in the past week  </option>
-                              <option> Please rate your pain based on the number that best describes your pain at it’s LEAST in the past week  </option>
-                              <option> Please rate your pain based on the number that best describes your pain at it’s LEAST in the past week  </option>
-                              <option> Please rate your pain based on the number that best describes your pain on the Average  </option>
-                              <option> Please rate your pain based on the number that best describes your pain that tells how much pain you have RIGHT NOW </option>
-                              <option> Based on the number that best describes how during the past week pain has INTERFERED with your: General Activity </option>
-                              <option> Based on the number that best describes how during the past week pain has INTERFERED with your: Mood </option>
-                              <option> Based on the number that best describes how during the past week pain has INTERFERED with your: Walking ability </option>
-                              <option> Based on the number that best describes how during the past week pain has INTERFERED with your: Normal work (includes work both outside the home and housework) </option>
-                              <option> Based on the number that best describes how during the past week pain has INTERFERED with your: RelaVonships with other people. </option>
-                              <option> Based on the number that best describes how during the past week pain has INTERFERED with your: Sleep </option>
-                              <option> Based on the number that best describes how during the past week pain has INTERFERED with your: Enjoyment of life </option>
+                           <select class="details" name="bpi_options" required> 
+                              <option value="select">Select</option>
+                              <option value="relief_medication"> How much relief have pain treatments or medications FROM THIS CLINIC provided? (0-100)  </option>
+                              <option value="worst_past_week"> Please rate your pain based on the number that best describes your pain at it’s WORST in the past week  </option>
+                              <option value="least_past_week"> Please rate your pain based on the number that best describes your pain at it’s LEAST in the past week  </option>
+                              <option value="average_pain"> Please rate your pain based on the number that best describes your pain on the Average  </option>
+                              <option value="pain_current"> Please rate your pain based on the number that best describes your pain that tells how much pain you have RIGHT NOW </option>
+                              <option value="general_activity"> Based on the number that best describes how during the past week pain has INTERFERED with your: General Activity </option>
+                              <option value="mood"> Based on the number that best describes how during the past week pain has INTERFERED with your: Mood </option>
+                              <option value="walking_ability"> Based on the number that best describes how during the past week pain has INTERFERED with your: Walking ability </option>
+                              <option value="normal_work"> Based on the number that best describes how during the past week pain has INTERFERED with your: Normal work (includes work both outside the home and housework) </option>
+                              <option value="Relationships"> Based on the number that best describes how during the past week pain has INTERFERED with your: Relationships with other people. </option>
+                              <option value="sleep"> Based on the number that best describes how during the past week pain has INTERFERED with your: Sleep </option>
+                              <option value="enjoyment"> Based on the number that best describes how during the past week pain has INTERFERED with your: Enjoyment of life </option>
                            </select>
                         </div>
                         <div class="col-md-6  card-body">
-                           <input type="number" max="10" class="form-control contactus" id="painRelief" name="painRelief" min="0" max="100" required>
+                           <input type="number" max="10" class="form-control details" id="painRelief" name="painRelief" min="0" max="100" required>
 
                         </div>
                         
                         <div class="col-md-12">
-                           <button class="send_btn">Calculate</button>
+                           <button class="calculate_btn">Calculate</button>
                         </div>
                      </div>
                   </form>
                </div>
             </div>
+            <div class="card mt-3">
+               <div class="card-header">
+                 Total Score
+               </div>
+               <div class="card-body">
+                 <!-- Total Score will be calculated automatically based on the selected values -->
+                 <p>Total Score: <span id="total_score">0</span></p>
+               </div>
+             </div>
+       
          </div>
       </div>
       <!-- end contact -->
