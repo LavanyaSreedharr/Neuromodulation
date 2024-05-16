@@ -61,8 +61,6 @@ $(function () {
 	 /* age show in box */
 
 	 $(document).ready(function () {
-		
-
 		$('#dob').on('change', function () {
 			var dob = new Date($('#dob').val());
 			var today=new Date();
@@ -70,5 +68,44 @@ $(function () {
 			$('#age').val(age);
 		});
 	  });
+
+	  // jQuery script to calculate total score
+	  $(document).ready(function() {
+		$('input').change(function() {
+		  var total = 0;
+		  // Add all input values with a range of 0 to 10
+		  $('input[type="number"]').each(function() {
+			total += parseInt($(this).val() || 0);
+		  });
+		  // Update total score
+		  $('#total_score').text(total);
+		});
+	  });
+
+	  $(document).ready(function () {                 
+		$('#Neuromodulation_form').submit(function (event) { 
+			event.preventDefault();                 
+			var form = document.getElementById('Neuromodulation_form'); 
+			var formData = new FormData(form); 
+		    var score = $('#total_score').text();
+			formData.append("bpi_total_score", score);
+
+			$.ajax({ 
+				url: 'patientformAction.php', 
+				method: 'POST', 
+				data: formData, 
+				processData: false, 
+				contentType: false, 
+				success: function (response) {                       
+					alert('Form saved successfully.'); 
+					location.reload(); 
+				}, 
+				error: function (xhr, status, error) {                        
+					alert('Your form was not sent successfully.'); 
+					console.error(error); 
+				} 
+			}); 
+		}); 
+	}); 
 
 });

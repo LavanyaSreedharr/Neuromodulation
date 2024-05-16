@@ -699,6 +699,15 @@ ul.search li a:hover {
      border-radius: 50px;
 }
 
+.main_form .bpi_options{
+     border: #fff solid 1px;
+     background: #fff;
+     color: #010005;
+     font-weight: normal;
+     box-shadow: 2px 0px 21px rgba(3, 3, 3, 0.24);
+     border-radius: 50px;
+}
+
 .main_form .textarea {
      border: #fff solid 1px;
      margin-bottom: 25px;
@@ -723,12 +732,18 @@ ul.search li a:hover {
      display: block;
      margin-top: 10px !important;
      font-weight: 500;
-     height: 86px;
+     height: 60px;
      border-radius: 50px;
      margin: 0 auto;
 }
 
 .main_form .send_btn:hover {
+     background-color: #1296cc;
+     transition: ease-in all 0.5s;
+     color: #fff;
+}
+
+.main_form .calculate_btn:hover {
      background-color: #1296cc;
      transition: ease-in all 0.5s;
      color: #fff;
@@ -954,5 +969,27 @@ ul.insta li {
 .about {background-color: #fff; padding-top: 90px;}
 .margin_0 {
      margin: 0 !important;
+}
+#bpi_data{
+     font-family: Arial, Helvetica, sans-serif;
+     border-collapse: collapse;
+     width: 100%;
+}
+
+#bpi_data td, #bpi_data th {
+     border: 1px solid #ddd;
+     padding: 8px;
+}
+
+#bpi_data tr:nth-child(even){background-color: #f2f2f2;}
+
+#bpi_data tr:hover {background-color: #ddd;}
+
+#bpi_data th {
+     padding-top: 12px;
+     padding-bottom: 12px;
+     text-align: left;
+     background-color: #1296cc;
+     color: white;
 }
 

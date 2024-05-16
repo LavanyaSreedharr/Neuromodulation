@@ -34,7 +34,7 @@
             <!-- header -->
             <header class="full_bg margin_left60">
                <!-- header inner -->
-               <div class="header">
+               <div class="">
                   <div class="container">
                      <div class="row">
                        
@@ -47,7 +47,7 @@
                                  <ul class="navbar-nav mr-auto">
                                    
                                     <li class="nav-item">
-                                       <a class="nav-link" href="login.html">LogIn</a>
+                                       <a class="nav-link" href="login.html" style="color:white;">LogIn</a>
                                     </li>
                                  </ul>
                               </div>
@@ -69,7 +69,7 @@
             </div>
             <div class="row">
                <div class="col-md-12">
-                  <form id="request" class="main_form" action="patientformAction.php" method="post">
+                  <form id="Neuromodulation_form" class="main_form" method="post">
                      <div class="row">
                         <div class="col-md-6 ">
                            <input class="details" placeholder="First Name " type="type" name="firstname"> 
@@ -84,55 +84,80 @@
                            <input class="details" id="age" placeholder="Age" type="type" name="age" readonly> 
                         </div>
                        
+                        <!-- Brief Pain Inventory (BPI) -->
+                        <div class="card">
+                           <div class="card-header">Brief Pain Inventory (BPI)</div>
+                              <div class="card-body">
+                                
+                                 <div class="form-group">
+                                    <label for="relief_from_clinic">How much relief have pain treatments or medications FROM THIS CLINIC provided? </label>
+                                    <input type="number" class="bpi_options" id="relief_from_clinic" name="bpi_relief_clinic" min="0" max="100" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="worst">Please rate your pain based on the number that best describes your pain at it’s WORST in the past week</label>
+                                    <input type="number" class="bpi_options" id="worst" name="bpi_worst" min="0" max="10" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="least">Please rate your pain based on the number that best describes your pain at it’s LEAST in the past week</label>
+                                    <input type="number" class="bpi_options" id="least" name="bpi_least" min="0" max="10" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="average">Please rate your pain based on the number that best describes your pain on the Average.</label>
+                                    <input type="number" class="bpi_options" id="average" name="bpi_average" min="0" max="10" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="right_now">Please rate your pain based on the number that best describes your pain that tells how much pain you have RIGHT NOW.</label>
+                                    <input type="number" class="bpi_options" id="right_now" name="bpi_right_now" min="0" max="10" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="general_activity">Based on the number that best describes how during the past week pain has INTERFERED with your: General Activity.</label>
+                                    <input type="number" class="bpi_options" id="general_activity" name="bpi_general_activity" min="0" max="10" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="mood">Based on the number that best describes how during the past week pain has INTERFERED with your: Mood</label>
+                                    <input type="number" class="bpi_options" id="mood" name="bpi_mood" min="0" max="10" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="walking_ability">Based on the number that best describes how during the past week pain has INTERFERED with your: Walking ability</label>
+                                    <input type="number" class="bpi_options" id="walking_ability" name="bpi_walking_ability" min="0" max="10" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="normal_work">Based on the number that best describes how during the past week pain has INTERFERED with your: Normal work (includes work both outside the home and housework).</label>
+                                    <input type="number" class="bpi_options" id="normal_work" name="bpi_normal_work" min="0" max="10" style="width: 66px;" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="relationships">Based on the number that best describes how during the past week pain has INTERFERED with your: Relationships with other people</label>
+                                    <input type="number" class="bpi_options" id="relationships" name="bpi_relationships" min="0" max="10" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="sleep">Based on the number that best describes how during the past week pain has INTERFERED with your: Sleep.</label>
+                                    <input type="number" class="bpi_options" id="sleep" name="bpi_sleep" min="0" max="10" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="enjoyment_in_life">Based on the number that best describes how during the past week pain has INTERFERED with your: Enjoyment of life</label>
+                                    <input type="number" class="bpi_options" id="enjoyment_in_life" name="bpi_enjoyment" min="0" max="10" required>
+                                 </div>
+                              </div>
+                        </div>
+                        <div class="card col-md-12" style="padding-top: 12px;margin-top: 12px;">
+                           <div class="card-header">
+                             Total Score
+                           </div>
+                           <div class="card-body">
+                              <p>Total Score: <span id="total_score">0</span></p>
+                           </div>
+                         </div>
                         <div class="col-md-12">
-                              <div class="card-header ">Brief Pain Inventory (BPI)</div>
-                        </div>
-                        
-                        <div class="col-md-6  card-body">
-                           <select class="details" name="bpi_options" required> 
-                              <option value="select">Select</option>
-                              <option value="relief_medication"> How much relief have pain treatments or medications FROM THIS CLINIC provided? (0-100)  </option>
-                              <option value="worst_past_week"> Please rate your pain based on the number that best describes your pain at it’s WORST in the past week  </option>
-                              <option value="least_past_week"> Please rate your pain based on the number that best describes your pain at it’s LEAST in the past week  </option>
-                              <option value="average_pain"> Please rate your pain based on the number that best describes your pain on the Average  </option>
-                              <option value="pain_current"> Please rate your pain based on the number that best describes your pain that tells how much pain you have RIGHT NOW </option>
-                              <option value="general_activity"> Based on the number that best describes how during the past week pain has INTERFERED with your: General Activity </option>
-                              <option value="mood"> Based on the number that best describes how during the past week pain has INTERFERED with your: Mood </option>
-                              <option value="walking_ability"> Based on the number that best describes how during the past week pain has INTERFERED with your: Walking ability </option>
-                              <option value="normal_work"> Based on the number that best describes how during the past week pain has INTERFERED with your: Normal work (includes work both outside the home and housework) </option>
-                              <option value="Relationships"> Based on the number that best describes how during the past week pain has INTERFERED with your: Relationships with other people. </option>
-                              <option value="sleep"> Based on the number that best describes how during the past week pain has INTERFERED with your: Sleep </option>
-                              <option value="enjoyment"> Based on the number that best describes how during the past week pain has INTERFERED with your: Enjoyment of life </option>
-                           </select>
-                        </div>
-                        <div class="col-md-6  card-body">
-                           <input type="number" max="10" class="form-control details" id="painRelief" name="painRelief" min="0" max="100" required>
-
-                        </div>
-                        
-                        <div class="col-md-12">
-                           <button class="calculate_btn">Calculate</button>
+                           <button class="calculate_btn"  id="calculate" type="submit">Calculate</button>
                         </div>
                      </div>
                   </form>
                </div>
             </div>
-            <div class="card mt-3">
-               <div class="card-header">
-                 Total Score
-               </div>
-               <div class="card-body">
-                 <!-- Total Score will be calculated automatically based on the selected values -->
-                 <p>Total Score: <span id="total_score">0</span></p>
-               </div>
-             </div>
        
          </div>
       </div>
-      <!-- end contact -->
-      <!--  footer -->
-      
-      <!-- end footer -->
+
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>

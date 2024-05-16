@@ -1,0 +1,20 @@
+CREATE TABLE bpi_patient (
+    Id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    firstname varchar(255),
+    surname varchar(255),
+    dob date,
+    age int,
+    bpi_relief_clinic int,
+    bpi_worst int,
+    bpi_least int,
+    bpi_average int,
+    bpi_right_now int,
+    bpi_general_activity int,
+    bpi_mood int,
+    bpi_walking_ability int,
+    bpi_normal_work int,
+    bpi_relationships int,
+    bpi_sleep int,
+    bpi_enjoyment int,
+    bpi_total_score int
+);
